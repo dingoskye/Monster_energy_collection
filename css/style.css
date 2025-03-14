@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: forestgreen;
+}
+
+body.dialog-open {
+    overflow: hidden;
+}
+
+h1.main-title {
+    text-align: center;
+    font-family: 'Press Start 2P', sans-serif;
+    text-shadow: palegreen 2px 5px;
+    color: greenyellow;
+}
+
+h2 {
+    background-color: snow;
+    padding: 4px;
+    text-transform: capitalize;
+    color: darkorchid;
+}
+
+h2 span {
+    background-color: darkgreen;
+    color: snow;
+    font-size: 0.9em;
+    padding: 4px;
+    border-radius: 12px;
+}
+
+#monster-gallery {
+    max-width: 1200px;
+    margin: 0 auto 1rem;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    justify-items: center;
+}
+
+.monster-card {
+    margin: 5px;
+    width: 180px;
+    max-height: min-content;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 palegreen;
+    transition: 0.3s;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 5px solid snow;
+    border-radius: 10px;
+    cursor: pointer;
+    transform-origin: center;
+}
+
+.monster-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.monster-card h2 {
+    font-size: 18px;
+    margin-bottom: 0.5rem;
+}
+
+.monster-card img {
+    width: 180px;
+    height: 425px;
+    object-fit: fill;
+}
+
+.monster-card button {
+    width: 100%;
+    cursor: pointer;
+    border: 0;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+.details {
+    color: darkorchid;
+}
+
+.add-favorite {
+    background-color: palegoldenrod;
+    color: orchid;
+}
+
+.remove-favorite {
+    background-color: crimson;
+    color: aqua;
+}
+
+.error {
+    text-align: center;
+    color: red;
+}
+
+.modal {
+    opacity: 0;
+    transition: all 0.7s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: palegreen;
+    border-radius: 16px;
+    padding: 0px;
+    box-shadow: 0 16px 22px 0 greenyellow;
+    text-align: center;
+}
+
+.modal[open] {
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.modal-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    outline: none;
+    appearance: none;
+    color: palegreen;
+    background: none;
+    border: greenyellow;
+    font-weight: bold;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.modal-content h1 {
+    margin: 0;
+    padding: 20px;
+    background-color: darkgreen;
+    color: white;
+    text-transform: capitalize;
+}
+
+.modal-content img {
+    width: 300px;
+}
+
+/* shiny shiny */
+.modal-content::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 52%, rgba(255, 255, 255, 0) 100%);
+    animation: shiny-animation 5s ease-in-out infinite alternate;
+    background-position-y: 0px;
+}
+
