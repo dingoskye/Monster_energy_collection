@@ -1,7 +1,6 @@
 window.addEventListener('load', init);
 
 //Globals
-// const apiBaseUrl = 'https://prg03-2024-2025.test/lesson8/openai/webservice/';
 const apiUrl = 'http://prg03-eindopdracht.test/webservice/';
 let monsterData = {};
 let body;
@@ -58,7 +57,7 @@ function createMonster(data) {
         title.innerText = getMonsters.name;
         collection.appendChild(title);
 
-        // Image (placeholder)
+        // Image
         const img = document.createElement('img');
         img.src = getMonsters.image;
         img.alt = getMonsters.name;
